@@ -77,7 +77,7 @@ public class CharGenInit
         //c.weighty = 0.25;
         c.gridx = 3;
         c.gridy = 2;
-        pane.add(button, c);
+        pane.add(button, c); 
     }
     
     private static void createAndShowGUI() {
