@@ -1,14 +1,81 @@
 package dnd.main;
 
 import java.awt.Container;
-import java.awt.GridLayout;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 public class CharGenRandom 
 {
-	private static void addComponentsToPane(Container pane) {
-		pane.setLayout(new GridLayout()) ;
+	private static void addComponentsToPane(Container pane) 
+	{
+		pane.setLayout(new GridBagLayout()) ;
+		
+		GridBagConstraints c = new GridBagConstraints() ;
+		c.fill = GridBagConstraints.HORIZONTAL ;
+		
+		JLabel label = new JLabel("Character Name:") ;
+		c.gridx = 0;
+		c.ipadx = 30 ;
+		c.gridy = 0 ;
+		c.ipady = 5 ;
+		pane.add(label,c) ;
+		
+		JTextField text = new JTextField() ;
+		c.gridx = 1;
+		c.gridy = 0 ;
+		text.setPreferredSize(new Dimension(100,20)) ;
+		pane.add(text,c) ;
+		
+		label = new JLabel("Level:") ;
+		c.gridx = 0;
+		c.gridy = 1 ;
+		pane.add(label,c) ;
+		
+		JTextField text2 = new JTextField() ;
+		c.gridx = 1;
+		c.gridy = 1 ;
+		text.setPreferredSize(new Dimension(100,20)) ;
+		pane.add(text2,c) ;
+		
+		label = new JLabel("Race:") ;
+		c.gridx = 0;
+		c.gridy = 2 ;
+		pane.add(label,c) ;
+		
+		String[] races = {"Human", "Dwarf", "Elf", "Gnome", "Half-Elf", "Half-Orc", "Halfling"} ;
+		JComboBox raceList = new JComboBox(races) ;
+		c.gridx = 1 ;
+		c.gridy = 2 ;
+		pane.add(raceList,c) ;
+		
+		label = new JLabel("Class:") ;
+		c.gridx = 0 ;
+		c.gridy = 3 ;
+		pane.add(label,c) ;
+		
+		String[] classes = {"Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Ranger", "Rogue", 
+							"Paladin", "Sorcerer", "Wizard"} ;
+		JComboBox classList = new JComboBox(classes) ;
+		c.gridx = 1 ;
+		c.gridy = 3 ;
+		pane.add(classList,c) ;
+		
+		label = new JLabel("Size:") ;
+		c.gridx = 0 ;
+		c.gridy = 4 ;
+		pane.add(label,c) ;
+		
+		String[] sizes = {"Diminutive", "Tiny", "Small", "Medium", "Large", "Huge", "Colossal", "Gargantuan"} ;
+		JComboBox sizeList = new JComboBox(sizes) ;
+		c.gridx = 1 ;
+		c.gridy = 4 ;
+		pane.add(sizeList,c) ;
 	}
 	
 	/**
