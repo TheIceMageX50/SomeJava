@@ -4,7 +4,11 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -76,6 +80,45 @@ public class CharGenRandom
 		c.gridx = 1 ;
 		c.gridy = 4 ;
 		pane.add(sizeList,c) ;
+		
+		label = new JLabel("Unarmoured:") ;
+		c.gridx = 0 ;
+		c.gridy = 5 ;
+		pane.add(label,c) ;
+		
+		JCheckBox box1 = new JCheckBox() ;
+		c.gridx = 1 ;
+		c.gridy = 5 ;
+		pane.add(box1,c) ;
+		
+		label = new JLabel("Unarmed:") ;
+		c.gridx = 0 ;
+		c.gridy = 6 ;
+		pane.add(label,c) ;
+		
+		JCheckBox box2 = new JCheckBox() ;
+		c.gridx = 1 ;
+		c.gridy = 6 ;
+		pane.add(box2,c) ;
+		
+		JButton button = new JButton("Cancel") ;
+		c.gridx = 0 ;
+		c.gridy = 7 ;
+		button.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				System.exit(0) ;
+			}
+			
+		}) ;
+		pane.add(button,c) ;
+		
+		button = new JButton("Generate") ;
+		c.gridx = 1 ;
+		c.gridy = 7 ;
+		pane.add(button,c) ;
 	}
 	
 	/**

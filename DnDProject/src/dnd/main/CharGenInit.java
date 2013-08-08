@@ -5,6 +5,8 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
@@ -12,7 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants ;
+import javax.swing.SwingConstants;
 
 public class CharGenInit
 {
@@ -23,7 +25,7 @@ public class CharGenInit
 
     public static void addComponentsToPane(Container pane) {
        JLabel label;
-       JButton button ;
+       JButton button, button2, button3, button4 ;
        JTextField text ;
       
     	if (RIGHT_TO_LEFT) {
@@ -59,6 +61,14 @@ public class CharGenInit
         //c.weighty = 0.25;
         c.gridx = 0;
         c.gridy = 2;
+        button.addActionListener(new ActionListener()
+        {
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				CharGenRandom.main(null) ;
+			}
+        }) ;
         pane.add(button, c);
         
         button = new JButton("OK") ;
@@ -101,7 +111,7 @@ public class CharGenInit
 
 			@Override
 			public void windowClosing(WindowEvent arg0) {
-				// TODO Auto-generated method stub
+				
 				
 			}
 
